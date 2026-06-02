@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>企業サイトテンプレート</title>
+  <meta name="description" content="企業サイトテンプレートです。">
+
+  <script>
+    /*
+      ===========================
+      SITE_CONFIG
+      このブロックだけ編集すれば主要テキストをまとめて変更できます
+      ===========================
+    */
+window.SITE_CONFIG = {
+  companyNameJa: "合同会社紡",
+  companyNameEn: "Tsumugi LLC",
+  logoMain: "Tsumugi",
+  logoAccent: "LLC",
+
+  heroEyebrow: "Energy & Human Resource Company",
+  heroTitleLine1: "TSUMUGI",
+  heroTitleLine2: "CONNECT.",
+  heroTitleLine3: "FUTURE",
+  heroSubTitle: "エネルギーと人の可能性をつなぐ。",
+  heroDescription: "合同会社紡は、太陽光発電システム、蓄電池、オール電化機器の販売、\n営業代行業務および有料職業紹介を行う企業です。",
+
+  aboutTitle: "暮らしと企業活動を、\n多角的に支える。",
+  aboutText1: "私たちは、太陽光発電システム、蓄電池、オール電化機器の販売を通じて、暮らしや事業に関わるエネルギー活用を支援します。",
+  aboutText2: "また、営業代行業務を通じて、企業の販売活動や事業推進をサポートします。",
+  aboutText3: "有料職業紹介事業により、人と企業をつなぎ、より良い雇用機会の創出にも取り組んでいます。",
+
+  ceoName: "前野隼也",
+  locationZip: "〒150-0043",
+  locationAddress: "東京都渋谷区道玄坂1-10-8 渋谷道玄坂東急ビル2F-C",
+  businessDescription: "太陽光発電システム、蓄電池及びオール電化機器の販売並びに営業代行業務・有料職業紹介",
+
+  businessSectionTitle: "BUSINESS",
+  businessSectionSub: "エネルギー関連事業と人材支援を通じて、暮らしと企業活動を支えます",
+  businessItems: [
+    {
+      number: "01",
+      title: "太陽光発電システム",
+      description: "太陽光発電システムの販売を通じて、住まいや事業におけるエネルギー活用を支援します。"
+    },
+    {
+      number: "02",
+      title: "蓄電池・オール電化機器",
+      description: "蓄電池及びオール電化機器の販売を通じて、快適で効率的な暮らしづくりをサポートします。"
+    },
+    {
+      number: "03",
+      title: "営業代行・有料職業紹介",
+      description: "営業代行業務と有料職業紹介を通じて、企業活動と人材のマッチングを支援します。"
+    }
+  ],
+
+  recruitCatch: "関東エリア ― 一般事務 募集中",
+  recruitJobType: "一般事務",
+  recruitJobDescription: "事業運営を支える事務サポート業務",
+
+  heroPrimaryCta: "採用情報を見る",
+  heroSecondaryCta: "About Us",
+  recruitCtaText: "ご希望の勤務地を選んで、お問い合わせフォームよりご応募ください。",
+  recruitCtaButton: "応募する",
+
+  heroStats: [
+    { value: "10", suffix: "拠点", label: "募集勤務地" },
+    { value: "100", suffix: "%", label: "土日祝休み" },
+    { value: "3", suffix: "領域", label: "Business" }
+  ],
+
+  contactEndpoint: "tables/contact_messages",
+
+  metaTitle: "合同会社紡 | 事業紹介・採用情報",
+  metaDescription: "合同会社紡は、太陽光発電システム、蓄電池、オール電化機器の販売、営業代行業務、有料職業紹介を行う企業です。関東エリアで一般事務を募集しています。",
+
+  copyrightYear: "2026"
+};
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+
+      <a href="#hero" class="logo" aria-label="トップへ戻る">
+        <span class="logo-main">
+          <span data-site-text="logoMain"></span><span data-site-text="logoAccent"></span>
+        </span>
+        <span class="logo-sub" data-site-text="companyNameJa"></span>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-controls="global-nav" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="global-nav" id="global-nav">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#business">Business</a></li>
+          <li><a href="#recruit">Recruit</a></li>
+          <li><a href="#contact" class="nav-cta">Contact</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero">
+
+    <div class="hero-line-1"></div>
+    <div class="hero-line-2"></div>
+    <div class="hero-gold-block"></div>
+
+    <div class="hero-inner">
+
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span class="hero-eyebrow-text" data-site-text="heroEyebrow"></span>
+      </div>
+
+      <h1 class="hero-title" id="hero-title"></h1>
+
+      <p class="hero-title-sub" data-site-text="heroSubTitle"></p>
+
+      <p class="hero-desc u-pre-line" data-site-text="heroDescription"></p>
+
+      <div class="hero-btns">
+        <a href="#recruit" class="btn-gold" data-site-text="heroPrimaryCta"></a>
+        <a href="#about" class="btn-outline-gold" data-site-text="heroSecondaryCta"></a>
+      </div>
+
+      <div class="hero-stats" id="hero-stats"></div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+
+    <div class="about-grid">
+
+      <div class="fade-up">
+
+        <div class="about-label">
+          <div class="about-label-line"></div>
+          <span class="about-label-text">About Us</span>
+        </div>
+
+        <h2 class="about-title u-pre-line" data-site-text="aboutTitle"></h2>
+
+        <div class="about-body">
+          <p data-site-text="aboutText1"></p>
+          <p data-site-text="aboutText2"></p>
+          <p data-site-text="aboutText3"></p>
+        </div>
+
+      </div>
+
+      <div class="fade-up">
+
+        <table class="company-table">
+          <tbody>
+
+            <tr>
+              <th>Company</th>
+              <td data-site-text="companyNameJa"></td>
+            </tr>
+
+            <tr>
+              <th>CEO</th>
+              <td data-site-text="ceoName"></td>
+            </tr>
+
+            <tr>
+              <th>Location</th>
+              <td class="u-pre-line" data-site-text="locationFull"></td>
+            </tr>
+
+            <tr>
+              <th>Business</th>
+              <td data-site-text="businessDescription"></td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BUSINESS -->
+  <section id="business">
+
+    <div class="section-inner">
+
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text">Business</span>
+        <div class="section-label-line"></div>
+      </div>
+
+      <h2 class="section-title section-title-dark" data-site-text="businessSectionTitle"></h2>
+
+      <p class="section-sub section-sub-dark" data-site-text="businessSectionSub"></p>
+
+      <div class="biz-grid" id="business-grid"></div>
+
+    </div>
+
+  </section>
+
+  <!-- RECRUIT -->
+  <section id="recruit">
+
+    <div class="section-inner">
+
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text">Recruit</span>
+        <div class="section-label-line"></div>
+      </div>
+
+      <h2 class="section-title section-title-light">
+        JOIN US
+      </h2>
+
+      <p class="section-sub section-sub-light" data-site-text="recruitCatch"></p>
+
+      <div class="recruit-overview">
+
+        <div class="recruit-overview-card">
+          <div class="recruit-overview-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div class="recruit-overview-text">
+            <h4>勤務地</h4>
+            <p>全国主要エリア</p>
+            <small>希望勤務地を考慮します</small>
+          </div>
+        </div>
+
+        <div class="recruit-overview-card">
+          <div class="recruit-overview-icon">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <div class="recruit-overview-text">
+            <h4>職種</h4>
+            <p data-site-text="recruitJobType"></p>
+            <small data-site-text="recruitJobDescription"></small>
+          </div>
+        </div>
+
+        <div class="recruit-overview-card">
+          <div class="recruit-overview-icon">
+            <i class="fa-solid fa-calendar-check"></i>
+          </div>
+          <div class="recruit-overview-text">
+            <h4>休日</h4>
+            <p>土日祝休み</p>
+            <small>完全週休2日制</small>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="recruit-filter">
+        <button class="filter-btn active" data-region="all">ALL</button>
+        <button class="filter-btn" data-region="kanto">関東</button>
+        <button class="filter-btn" data-region="kansai">関西</button>
+        <button class="filter-btn" data-region="chubu">中部</button>
+        <button class="filter-btn" data-region="chugoku">中国</button>
+      </div>
+
+      <div class="prefecture-grid">
+
+        <div class="pref-card" data-region="kanto">
+          <div class="pref-card-header">
+            <span class="pref-name">新宿オフィス</span>
+            <span class="pref-region-badge">関東</span>
+          </div>
+          <div class="pref-card-body">
+            <div class="pref-info-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>東京都新宿区 西新宿1丁目26-2</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pref-card" data-region="kanto">
+          <div class="pref-card-header">
+            <span class="pref-name">丸の内オフィス</span>
+            <span class="pref-region-badge">関東</span>
+          </div>
+          <div class="pref-card-body">
+            <div class="pref-info-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>東京都千代田区 丸の内1丁目6-5</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pref-card" data-region="kanto">
+          <div class="pref-card-header">
+            <span class="pref-name">八重洲オフィス</span>
+            <span class="pref-region-badge">関東</span>
+          </div>
+          <div class="pref-card-body">
+            <div class="pref-info-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>東京都中央区 八重洲1丁目4-16</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pref-card" data-region="kanto">
+          <div class="pref-card-header">
+            <span class="pref-name">大宮オフィス</span>
+            <span class="pref-region-badge">関東</span>
+          </div>
+          <div class="pref-card-body">
+            <div class="pref-info-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>埼玉県さいたま市大宮区 大門町2丁目118</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pref-card" data-region="kanto">
+          <div class="pref-card-header">
+            <span class="pref-name">川口オフィス</span>
+            <span class="pref-region-badge">関東</span>
+          </div>
+          <div class="pref-card-body">
+            <div class="pref-info-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>埼玉県川口市 栄町3丁目5-2</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pref-card" data-region="kanto">
+          <div class="pref-card-header">
+            <span class="pref-name">千葉オフィス</span>
+            <span class="pref-region-badge">関東</span>
+          </div>
+          <div class="pref-card-body">
+            <div class="pref-info-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>千葉県千葉市中央区 新町3-10</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pref-card" data-region="kanto">
+          <div class="pref-card-header">
+            <span class="pref-name">船橋オフィス</span>
+            <span class="pref-region-badge">関東</span>
+          </div>
+          <div class="pref-card-body">
+            <div class="pref-info-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>千葉県船橋市 本町2丁目7-14</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pref-card" data-region="kanto">
+          <div class="pref-card-header">
+            <span class="pref-name">横浜オフィス</span>
+            <span class="pref-region-badge">関東</span>
+          </div>
+          <div class="pref-card-body">
+            <div class="pref-info-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>神奈川県横浜市西区 高島2丁目19-12</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pref-card" data-region="kanto">
+          <div class="pref-card-header">
+            <span class="pref-name">川崎駅前オフィス</span>
+            <span class="pref-region-badge">関東</span>
+          </div>
+          <div class="pref-card-body">
+            <div class="pref-info-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>神奈川県川崎市川崎区 駅前本町26-1</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="pref-card" data-region="kanto">
+          <div class="pref-card-header">
+            <span class="pref-name">川崎幸オフィス</span>
+            <span class="pref-region-badge">関東</span>
+          </div>
+          <div class="pref-card-body">
+            <div class="pref-info-row">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>神奈川県川崎市幸区 中幸町3-3</span>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="recruit-cta">
+        <p data-site-text="recruitCtaText"></p>
+        <a href="#contact" class="btn-gold" data-site-text="recruitCtaButton"></a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <div class="section-inner">
+
+      <div class="section-label">
+        <div class="section-label-line"></div>
+        <span class="section-label-text">Contact</span>
+        <div class="section-label-line"></div>
+      </div>
+
+      <h2 class="section-title section-title-light">
+        GET IN TOUCH
+      </h2>
+
+      <div class="contact-form-wrap">
+
+        <form id="contact-form">
+
+          <div class="form-group">
+            <label>お名前</label>
+            <input type="text" id="name" placeholder="山田 太郎">
+            <p class="form-error" id="name-err">お名前を入力してください。</p>
+          </div>
+
+          <div class="form-group">
+            <label>会社名</label>
+            <input type="text" id="company" placeholder="株式会社〇〇">
+          </div>
+
+          <div class="form-group">
+            <label>メールアドレス</label>
+            <input type="email" id="email" placeholder="info@example.com">
+            <p class="form-error" id="email-err">正しいメールアドレスを入力してください。</p>
+          </div>
+
+          <div class="form-group">
+            <label>お問い合わせ種別</label>
+            <select id="category">
+              <option value="">選択してください</option>
+              <option value="応募">応募について</option>
+              <option value="事業">事業について</option>
+              <option value="その他">その他</option>
+            </select>
+            <p class="form-error" id="category-err">お問い合わせ種別を選択してください。</p>
+          </div>
+
+          <div class="form-group">
+            <label>お問い合わせ内容</label>
+            <textarea id="message" placeholder="内容をご入力ください"></textarea>
+            <p class="form-error" id="message-err">お問い合わせ内容を入力してください。</p>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit">
+              Send Message
+            </button>
+          </div>
+
+        </form>
+
+        <div class="form-success" id="form-success">
+          <i class="fa-solid fa-circle-check"></i>
+          <h3>送信が完了しました</h3>
+          <p>お問い合わせありがとうございます。内容を確認のうえ、担当者よりご連絡いたします。</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="footer-inner">
+
+      <div class="footer-grid">
+
+        <div>
+          <p class="footer-logo-main">
+            <span data-site-text="logoMain"></span><span data-site-text="logoAccent"></span>
+          </p>
+
+          <p class="footer-logo-sub" data-site-text="companyNameJa"></p>
+
+          <p class="footer-address u-pre-line" data-site-text="locationFull"></p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p data-site-text="copyrightText"></p>
+        <div class="footer-gold-line"></div>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <button id="back-top" aria-label="ページ上部へ戻る">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
